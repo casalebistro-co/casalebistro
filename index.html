@@ -221,7 +221,7 @@
     <div class="points-card">
       <p class="points-label">Puntos acumulados</p>
       <div class="points-number" id="display-points">0</div>
-      <p class="points-equiv">Cada $3.000 — 1 punto. Canjea y redime de domingo a jueves.</p>
+      <p class="points-equiv">Cada $2.500 — 1 punto. Canjea y redime de domingo a jueves.</p>
       <div class="progress-section">
         <div class="progress-label">
           <span>Próximo canje</span>
@@ -242,7 +242,7 @@
 
   <div class="tab-content active" id="tab-rewards">
     <h3 class="section-title">Tus beneficios</h3>
-    <p class="section-sub">Cada $3.000 — 1 punto. Canjea y redime de domingo a jueves.</p>
+    <p class="section-sub">Cada $2.500 — 1 punto. Canjea y redime de domingo a jueves.</p>
     <div class="reward-card" id="reward-50a" onclick="openRewardModal(50,'Tinto de Verano o Cerveza Nacional','🍷','Un tinto de verano o una cerveza nacional gratis.')">
       <div class="reward-icon">🍷</div><div class="reward-info"><div class="reward-name">Tinto de Verano o Cerveza</div><div class="reward-desc">Nacional · A tu elección</div></div>
       <div class="reward-pts"><div class="reward-pts-num">50</div><div class="reward-pts-label">puntos</div></div>
@@ -536,8 +536,9 @@ async function redeemReward() {
   if (!currentModal || !currentUser) return;
   const {pts, name} = currentModal;
   currentUser.puntos -= pts;
-  const today = new Date().toLocaleDateString('es-CO',{day:'numeric',month:'long'});
-  const historial = [...(currentUser.historial||[]), {desc:'Canjeado: '+name, pts:-pts, date:today}];
+  const now = new Date();
+  const fechaHora = now.toLocaleDateString('es-CO',{day:'numeric',month:'long'}) + ' · ' + now.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});
+  const historial = [...(currentUser.historial||[]), {desc:'Canjeado: '+name, pts:-pts, date:fechaHora}];
   showLoading(true);
   await sbUpdate(currentUser.id, {puntos: currentUser.puntos, historial});
   currentUser.historial = historial;
