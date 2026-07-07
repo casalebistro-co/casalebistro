@@ -31,7 +31,7 @@
   .cream-wordmark img{width:100%;height:auto;}
   .welcome-eyebrow{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
   .divider{width:36px;height:1px;background:var(--gold);margin:0 auto 20px;opacity:0.5;}
-  .welcome-desc{font-size:13px;line-height:1.9;color:rgba(255,255,255,0.55);max-width:280px;margin:0 auto 18px;}
+  .welcome-desc{font-size:14px;line-height:1.9;color:rgba(255,255,255,0.55);max-width:280px;margin:0 auto 18px;}
   .condition-banner{display:flex;align-items:flex-start;gap:10px;background:rgba(200,169,110,0.09);border:1px solid rgba(200,169,110,0.25);padding:12px 16px;margin-bottom:30px;max-width:300px;text-align:left;}
   .condition-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
   .condition-text{font-size:11px;line-height:1.7;color:rgba(255,255,255,0.65);}
@@ -69,7 +69,7 @@
   .points-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle at top right,rgba(200,169,110,0.1),transparent);}
   .points-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;}
   .points-number{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;line-height:1;color:var(--gold-light);}
-  .points-equiv{font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;}
+  .points-equiv{font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;}
   .progress-section{margin-top:16px;}
   .progress-label{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:8px;}
   .progress-bar{height:2px;background:rgba(255,255,255,0.1);}
@@ -81,8 +81,8 @@
   .nav-tab.active::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:1px;background:var(--gold);}
   .tab-content{display:none;padding:28px;flex:1;}
   .tab-content.active{display:block;}
-  .section-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:6px;}
-  .section-sub{font-size:12px;color:var(--text-muted);margin-bottom:24px;line-height:1.6;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;margin-bottom:6px;}
+  .section-sub{font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:24px;line-height:1.6;}
 
   .reward-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);padding:18px;margin-bottom:10px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
   .reward-card:hover{border-color:rgba(200,169,110,0.3);background:rgba(200,169,110,0.04);}
@@ -90,8 +90,8 @@
   .reward-card.unlocked::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);}
   .reward-icon{font-size:26px;flex-shrink:0;}
   .reward-info{flex:1;}
-  .reward-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;margin-bottom:2px;}
-  .reward-desc{font-size:11px;color:var(--text-muted);}
+  .reward-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;margin-bottom:2px;}
+  .reward-desc{font-size:12px;color:rgba(255,255,255,0.65);}
   .reward-pts{text-align:right;flex-shrink:0;}
   .reward-pts-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold);}
   .reward-pts-label{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);}
@@ -100,9 +100,9 @@
   .promo-card{background:linear-gradient(135deg,rgba(27,42,74,0.8) 0%,rgba(36,54,96,0.6) 100%);border:1px solid rgba(200,169,110,0.2);padding:22px;margin-bottom:14px;position:relative;overflow:hidden;}
   .promo-card::after{content:attr(data-emoji);position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:44px;opacity:0.13;}
   .promo-tag{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-  .promo-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:8px;line-height:1.2;}
-  .promo-desc{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.7;}
-  .promo-validity{font-size:10px;color:var(--text-muted);margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);}
+  .promo-title{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:700;margin-bottom:8px;line-height:1.2;}
+  .promo-desc{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.7;}
+  .promo-validity{font-size:11px;color:rgba(255,255,255,0.6);margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);}
 
   .history-item{display:flex;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,0.05);gap:12px;}
   .history-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:0.7;}
@@ -243,12 +243,22 @@
   <div class="tab-content active" id="tab-rewards">
     <h3 class="section-title">Tus beneficios</h3>
     <p class="section-sub">Cada $2.500 — 1 punto. Canjea y redime de domingo a jueves.</p>
+    <div class="reward-card" id="reward-15" onclick="openRewardModal(15,'Clase de Yoga Virtual','🧘','Una clase de Yoga Virtual completamente gratis para ti. El mejor regalo para tu bienestar.')">
+      <div class="reward-icon">🧘</div><div class="reward-info"><div class="reward-name">Clase de Yoga Virtual</div><div class="reward-desc">Gratis · Para tu bienestar</div></div>
+      <div class="reward-pts"><div class="reward-pts-num">15</div><div class="reward-pts-label">puntos</div></div>
+    </div>
+
+    <div class="reward-card" id="reward-40" onclick="openRewardModal(40,'Pin a tu Elección','📌','Elige el pin accesorio que más te guste. Un detalle especial por ser parte del club.')">
+      <div class="reward-icon">📌</div><div class="reward-info"><div class="reward-name">Pin — Accesorio</div><div class="reward-desc">A tu elección</div></div>
+      <div class="reward-pts"><div class="reward-pts-num">40</div><div class="reward-pts-label">puntos</div></div>
+    </div>
+
     <div class="reward-card" id="reward-50a" onclick="openRewardModal(50,'Tinto de Verano o Cerveza Nacional','🍷','Un tinto de verano o una cerveza nacional gratis.')">
       <div class="reward-icon">🍷</div><div class="reward-info"><div class="reward-name">Tinto de Verano o Cerveza</div><div class="reward-desc">Nacional · A tu elección</div></div>
       <div class="reward-pts"><div class="reward-pts-num">50</div><div class="reward-pts-label">puntos</div></div>
     </div>
-    <div class="reward-card" id="reward-60a" onclick="openRewardModal(60,'Hamburguesa Ilustre','🍔','Ven el martes y te damos una Hamburguesa Ilustre completamente gratis.')">
-      <div class="reward-icon">🍔</div><div class="reward-info"><div class="reward-name">Hamburguesa Ilustre</div><div class="reward-desc">Válido los martes</div></div>
+    <div class="reward-card" id="reward-60a" onclick="openRewardModal(60,'Hamburguesa Ilustre con Papas','🍔','Ven el martes y te damos una Hamburguesa Ilustre con papas completamente gratis.')">
+      <div class="reward-icon">🍔</div><div class="reward-info"><div class="reward-name">Hamburguesa Ilustre con Papas</div><div class="reward-desc">Válido los martes</div></div>
       <div class="reward-pts"><div class="reward-pts-num">60</div><div class="reward-pts-label">puntos</div></div>
     </div>
     <div class="reward-card" id="reward-60b" onclick="openRewardModal(60,'Postre a Elegir','🍮','Elige el postre que más te guste de nuestro menú.')">
@@ -259,16 +269,21 @@
       <div class="reward-icon">🍻</div><div class="reward-info"><div class="reward-name">Cerveza Importada</div><div class="reward-desc">La que prefieras de nuestro bar.</div></div>
       <div class="reward-pts"><div class="reward-pts-num">80</div><div class="reward-pts-label">puntos</div></div>
     </div>
-    <div class="reward-card" id="reward-120" onclick="openRewardModal(120,'Hamburguesa de la Casa','🏠','Ven el martes y te obsequiamos nuestra Hamburguesa de la Casa, la insignia del menú.')">
-      <div class="reward-icon">🏠</div><div class="reward-info"><div class="reward-name">Hamburguesa de la Casa</div><div class="reward-desc">Válido los martes · Nuestra insignia</div></div>
+    <div class="reward-card" id="reward-100" onclick="openRewardModal(100,'Hamburguesa Clásica con Papas','🍟','Una hamburguesa clásica con papas incluidas. Un clásico que nunca falla.')">
+      <div class="reward-icon">🍟</div><div class="reward-info"><div class="reward-name">Hamburguesa Clásica con Papas</div><div class="reward-desc">Incluye papas</div></div>
+      <div class="reward-pts"><div class="reward-pts-num">100</div><div class="reward-pts-label">puntos</div></div>
+    </div>
+
+    <div class="reward-card" id="reward-120" onclick="openRewardModal(120,'Hamburguesa de la Casa con Papas','🏠','Ven el martes y te obsequiamos nuestra Hamburguesa de la Casa con papas, la insignia del menú.')">
+      <div class="reward-icon">🏠</div><div class="reward-info"><div class="reward-name">Hamburguesa de la Casa con Papas</div><div class="reward-desc">Válido los martes · Nuestra insignia</div></div>
       <div class="reward-pts"><div class="reward-pts-num">120</div><div class="reward-pts-label">puntos</div></div>
     </div>
     <div class="reward-card" id="reward-300" onclick="openRewardModal(300,'Cena para Dos','🥂','Tus dos burgers favoritas + 2 bebidas. Una noche especial por cuenta de la casa.')">
       <div class="reward-icon">🥂</div><div class="reward-info"><div class="reward-name">Cena para Dos</div><div class="reward-desc">2 burgers + 2 bebidas · A tu elección</div></div>
       <div class="reward-pts"><div class="reward-pts-num">300</div><div class="reward-pts-label">puntos</div></div>
     </div>
-    <div class="reward-card" id="reward-400" onclick="openRewardModal(400,'4 Cheese n Bacon','🧀','Ven el martes y te obsequiamos 4 Cheese n Bacon.')">
-      <div class="reward-icon">🧀</div><div class="reward-info"><div class="reward-name">4 Cheese n' Bacon</div><div class="reward-desc">Válido los martes · Para celebrar</div></div>
+    <div class="reward-card" id="reward-400" onclick="openRewardModal(400,'4 Cheese n\' Bacon con Papas','🧀','Ven el martes y te obsequiamos 4 Cheese n\' Bacon con papas.')">
+      <div class="reward-icon">🧀</div><div class="reward-info"><div class="reward-name">4 Cheese n' Bacon con Papas</div><div class="reward-desc">Válido los martes · Con papas incluidas</div></div>
       <div class="reward-pts"><div class="reward-pts-num">400</div><div class="reward-pts-label">puntos</div></div>
     </div>
   </div>
@@ -496,8 +511,8 @@ function updateHomeUI() {
 }
 
 function updateRewardCards(pts) {
-  [{id:'reward-50a',t:50},{id:'reward-60a',t:60},{id:'reward-60b',t:60},
-   {id:'reward-80',t:80},{id:'reward-120',t:120},{id:'reward-300',t:300},{id:'reward-400',t:400}]
+  [{id:'reward-15',t:15},{id:'reward-40',t:40},{id:'reward-50a',t:50},{id:'reward-60a',t:60},{id:'reward-60b',t:60},
+   {id:'reward-80',t:80},{id:'reward-100',t:100},{id:'reward-120',t:120},{id:'reward-300',t:300},{id:'reward-400',t:400}]
   .forEach(item => {
     const card = document.getElementById(item.id);
     const badge = card.querySelector('.unlock-badge');
