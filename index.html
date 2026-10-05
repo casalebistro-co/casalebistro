@@ -8,15 +8,22 @@
 <meta name="apple-mobile-web-app-title" content="Casa Le Bistró">
 <meta name="theme-color" content="#111d33">
 <title>Casa Le Bistró — Club de Lealtad</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --navy:#1B2A4A; --navy-deep:#111d33; --navy-mid:#243660;
     --gold:#C8A96E; --gold-light:#e2c99a;
-    --white:#FFFFFF; --text-muted:rgba(255,255,255,0.5);
+    --white:#FFFFFF; --text-muted:rgba(255,255,255,0.75);
+    /* Títulos: Playfair Display Bold */
+    --font-title:'Playfair Display',Georgia,'Times New Roman',serif;
+    /* Textos: Mulish */
+    --font-body:'Mulish',system-ui,-apple-system,'Segoe UI',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  body{background:var(--navy-deep);color:var(--white);font-family:'Raleway',sans-serif;font-weight:300;min-height:100vh;overflow-x:hidden;}
+  body{background:var(--navy-deep);color:var(--white);font-family:var(--font-body);font-weight:400;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
   body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.4;}
   .screen{display:none;min-height:100vh;flex-direction:column;animation:fadeIn 0.4s ease;}
   .screen.active{display:flex;}
@@ -29,31 +36,31 @@
   .cream-mono img{width:100%;height:100%;object-fit:contain;}
   .cream-wordmark{width:255px;max-width:75vw;}
   .cream-wordmark img{width:100%;height:auto;}
-  .welcome-eyebrow{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  .welcome-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
   .divider{width:36px;height:1px;background:var(--gold);margin:0 auto 20px;opacity:0.5;}
-  .welcome-desc{font-size:14px;line-height:1.9;color:rgba(255,255,255,0.55);max-width:280px;margin:0 auto 18px;}
+  .welcome-desc{font-size:15.5px;line-height:1.75;color:rgba(255,255,255,0.94);max-width:290px;margin:0 auto 18px;}
   .condition-banner{display:flex;align-items:flex-start;gap:10px;background:rgba(200,169,110,0.09);border:1px solid rgba(200,169,110,0.25);padding:12px 16px;margin-bottom:30px;max-width:300px;text-align:left;}
   .condition-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
-  .condition-text{font-size:11px;line-height:1.7;color:rgba(255,255,255,0.65);}
+  .condition-text{font-size:13px;line-height:1.6;color:rgba(255,255,255,0.94);}
 
-  .btn-primary{display:block;width:100%;max-width:300px;margin:0 auto;padding:16px 32px;background:var(--gold);color:var(--navy-deep);border:none;font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.25s ease;}
+  .btn-primary{display:block;width:100%;max-width:300px;margin:0 auto;padding:16px 32px;background:var(--gold);color:var(--navy-deep);border:none;font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;transition:all 0.25s ease;}
   .btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .btn-ghost{display:block;width:100%;max-width:300px;margin:12px auto 0;padding:14px 32px;background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);font-family:'Raleway',sans-serif;font-size:11px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.25s ease;}
-  .btn-ghost:hover{border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);}
+  .btn-ghost{display:block;width:100%;max-width:300px;margin:12px auto 0;padding:14px 32px;background:transparent;color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.35);font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;transition:all 0.25s ease;}
+  .btn-ghost:hover{border-color:rgba(255,255,255,0.7);color:#fff;}
 
   #screen-login,#screen-register{background:var(--navy-deep);padding:60px 30px 40px;position:relative;}
   #screen-login{display:none;align-items:center;justify-content:center;text-align:center;}
   #screen-login.active{display:flex;flex-direction:column;}
-  .back-btn{position:absolute;top:20px;left:20px;background:none;border:none;color:var(--text-muted);cursor:pointer;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;}
+  .back-btn{position:absolute;top:20px;left:20px;background:none;border:none;color:var(--text-muted);cursor:pointer;font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;}
   .back-btn:hover{color:white;}
   .screen-header{text-align:center;margin-bottom:36px;width:100%;}
-  .screen-eyebrow{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
-  .screen-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;line-height:1.2;}
+  .screen-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+  .screen-title{font-family:var(--font-title);font-size:32px;font-weight:700;line-height:1.2;}
   .form-group{margin-bottom:20px;width:100%;}
-  .form-label{display:block;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
-  .form-input{width:100%;padding:14px 0;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.15);color:var(--white);font-family:'Raleway',sans-serif;font-size:15px;font-weight:300;outline:none;transition:border-color 0.2s;}
+  .form-label{display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:8px;}
+  .form-input{width:100%;padding:14px 0;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.35);color:var(--white);font-family:var(--font-body);font-size:16px;font-weight:400;outline:none;transition:border-color 0.2s;}
   .form-input:focus{border-bottom-color:var(--gold);}
-  .form-input::placeholder{color:rgba(255,255,255,0.2);}
+  .form-input::placeholder{color:rgba(255,255,255,0.42);}
   input[type="date"].form-input{color-scheme:dark;}
   input[type="date"].form-input::-webkit-calendar-picker-indicator{filter:invert(0.5) sepia(1) saturate(2) hue-rotate(5deg);opacity:0.5;cursor:pointer;}
 
@@ -63,55 +70,55 @@
   .home-header-top{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
   .home-monogram{width:52px;height:52px;flex-shrink:0;}
   .home-monogram img{width:100%;height:100%;object-fit:contain;}
-  .greeting{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
-  .user-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;}
+  .greeting{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);}
+  .user-name{font-family:var(--font-title);font-size:26px;font-weight:700;}
   .points-card{background:rgba(255,255,255,0.04);border:1px solid rgba(200,169,110,0.2);padding:22px;position:relative;overflow:hidden;}
   .points-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle at top right,rgba(200,169,110,0.1),transparent);}
-  .points-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;}
-  .points-number{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;line-height:1;color:var(--gold-light);}
-  .points-equiv{font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;}
+  .points-label{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.88);margin-bottom:4px;}
+  .points-number{font-family:var(--font-title);font-size:56px;font-weight:700;line-height:1;color:var(--gold-light);}
+  .points-equiv{font-size:13.5px;color:rgba(255,255,255,0.92);margin-top:6px;line-height:1.5;}
   .progress-section{margin-top:16px;}
-  .progress-label{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:8px;}
+  .progress-label{display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;color:rgba(255,255,255,0.88);margin-bottom:8px;}
   .progress-bar{height:2px;background:rgba(255,255,255,0.1);}
   .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));transition:width 1s cubic-bezier(0.4,0,0.2,1);}
 
   .nav-tabs{display:flex;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:10;}
-  .nav-tab{flex:1;padding:16px 8px;background:none;border:none;color:var(--text-muted);font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;position:relative;transition:color 0.2s;}
+  .nav-tab{flex:1;padding:16px 8px;background:none;border:none;color:var(--text-muted);font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;position:relative;transition:color 0.2s;}
   .nav-tab.active{color:var(--gold);}
   .nav-tab.active::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:1px;background:var(--gold);}
   .tab-content{display:none;padding:28px;flex:1;}
   .tab-content.active{display:block;}
-  .section-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;margin-bottom:6px;}
-  .section-sub{font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:24px;line-height:1.6;}
+  .section-title{font-family:var(--font-title);font-size:26px;font-weight:700;margin-bottom:6px;}
+  .section-sub{font-size:15px;color:rgba(255,255,255,0.94);margin-bottom:24px;line-height:1.6;}
 
-  .reward-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);padding:18px;margin-bottom:10px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
+  .reward-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.14);padding:18px;margin-bottom:10px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
   .reward-card:hover{border-color:rgba(200,169,110,0.3);background:rgba(200,169,110,0.04);}
-  .reward-card.locked{opacity:0.42;}
+  .reward-card.locked{opacity:0.78;}
   .reward-card.unlocked::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);}
   .reward-icon{font-size:26px;flex-shrink:0;}
   .reward-info{flex:1;}
-  .reward-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;margin-bottom:2px;}
-  .reward-desc{font-size:12px;color:rgba(255,255,255,0.65);}
+  .reward-name{font-family:var(--font-title);font-size:22px;font-weight:700;line-height:1.15;margin-bottom:3px;}
+  .reward-desc{font-size:13.5px;color:rgba(255,255,255,0.88);line-height:1.4;}
   .reward-pts{text-align:right;flex-shrink:0;}
-  .reward-pts-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold);}
-  .reward-pts-label{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);}
-  .unlock-badge{position:absolute;top:10px;right:10px;background:var(--gold);color:var(--navy-deep);font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;}
+  .reward-pts-num{font-family:var(--font-title);font-size:24px;font-weight:700;color:var(--gold);}
+  .reward-pts-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.85);}
+  .unlock-badge{position:absolute;top:10px;right:10px;background:var(--gold);color:var(--navy-deep);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;}
 
   .promo-card{background:linear-gradient(135deg,rgba(27,42,74,0.8) 0%,rgba(36,54,96,0.6) 100%);border:1px solid rgba(200,169,110,0.2);padding:22px;margin-bottom:14px;position:relative;overflow:hidden;}
   .promo-card::after{content:attr(data-emoji);position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:44px;opacity:0.13;}
-  .promo-tag{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-  .promo-title{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:700;margin-bottom:8px;line-height:1.2;}
-  .promo-desc{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.7;}
-  .promo-validity{font-size:11px;color:rgba(255,255,255,0.6);margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.07);}
+  .promo-tag{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .promo-title{font-family:var(--font-title);font-size:27px;font-weight:700;margin-bottom:8px;line-height:1.15;}
+  .promo-desc{font-size:14.5px;color:rgba(255,255,255,0.94);line-height:1.65;}
+  .promo-validity{font-size:12.5px;font-weight:600;color:rgba(255,255,255,0.82);margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.16);}
 
   .history-item{display:flex;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,0.05);gap:12px;}
   .history-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:0.7;}
   .history-dot.used{background:rgba(255,255,255,0.2);}
   .history-info{flex:1;}
-  .history-desc{font-size:13px;margin-bottom:2px;}
-  .history-date{font-size:11px;color:var(--text-muted);}
-  .history-pts{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);}
-  .history-pts.negative{color:rgba(255,255,255,0.3);}
+  .history-desc{font-size:14.5px;font-weight:600;margin-bottom:2px;}
+  .history-date{font-size:12.5px;color:rgba(255,255,255,0.8);}
+  .history-pts{font-family:var(--font-title);font-size:22px;font-weight:700;color:var(--gold);}
+  .history-pts.negative{color:rgba(255,255,255,0.65);}
 
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,15,26,0.85);z-index:100;align-items:flex-end;backdrop-filter:blur(4px);}
   .modal-overlay.active{display:flex;}
@@ -119,13 +126,13 @@
   @keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
   .modal-handle{width:36px;height:3px;background:rgba(255,255,255,0.15);border-radius:2px;margin:0 auto 24px;}
   .modal-icon{font-size:38px;text-align:center;margin-bottom:14px;}
-  .modal-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;text-align:center;margin-bottom:8px;}
-  .modal-sub{font-size:13px;color:var(--text-muted);text-align:center;margin-bottom:22px;}
+  .modal-title{font-family:var(--font-title);font-size:26px;font-weight:700;text-align:center;margin-bottom:8px;}
+  .modal-sub{font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.92);text-align:center;margin-bottom:22px;}
   .modal-pts-needed{background:rgba(200,169,110,0.08);border:1px solid rgba(200,169,110,0.2);padding:16px;text-align:center;margin-bottom:20px;}
-  .modal-pts-big{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--gold);}
-  .modal-pts-text{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);}
-  .modal-warning{font-size:12px;color:rgba(255,100,100,0.7);text-align:center;margin-bottom:16px;}
-  .btn-modal-cancel{width:100%;padding:14px;margin-top:10px;background:transparent;border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;}
+  .modal-pts-big{font-family:var(--font-title);font-size:44px;font-weight:700;color:var(--gold);}
+  .modal-pts-text{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.88);}
+  .modal-warning{font-size:13.5px;font-weight:600;color:#ff9b9b;text-align:center;margin-bottom:16px;}
+  .btn-modal-cancel{width:100%;padding:14px;margin-top:10px;background:transparent;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.9);font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;}
 
   .loading-overlay{display:none;position:fixed;inset:0;background:rgba(10,15,26,0.7);z-index:500;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
   .loading-overlay.active{display:flex;}
@@ -133,8 +140,24 @@
   @keyframes spin{to{transform:rotate(360deg);}}
   .loading-text{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);}
 
-  .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--gold);color:var(--navy-deep);padding:14px 24px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);z-index:200;white-space:nowrap;}
+  .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--gold);color:var(--navy-deep);padding:14px 24px;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);z-index:200;white-space:nowrap;}
   .toast.show{transform:translateX(-50%) translateY(0);}
+  .progress-label{gap:14px;}
+  .progress-label span:first-child{white-space:nowrap;}
+  #progress-text{text-align:right;}
+  .unlock-badge{top:0;right:0;}
+  .reward-card.unlocked .reward-pts{padding-top:16px;}
+  body{font-variant-numeric:lining-nums;}
+  .screen-title{font-size:29px;}
+  .user-name{font-size:25px;}
+  .section-title{font-size:25px;}
+  .reward-name{font-size:19px;line-height:1.25;}
+  .reward-pts-num{font-size:22px;}
+  .points-number{font-size:52px;}
+  .promo-title{font-size:24px;line-height:1.25;}
+  .modal-title{font-size:23px;line-height:1.25;}
+  .modal-pts-big{font-size:40px;}
+  .history-pts{font-size:20px;}
 </style>
 </head>
 <body>
@@ -171,8 +194,8 @@
     <div style="margin-top:32px;">
       <button class="btn-primary" onclick="doLogin()">Ingresar</button>
     </div>
-    <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:20px;">
-      ¿No tienes cuenta? <span style="color:var(--gold);cursor:pointer;" onclick="showScreen('register')">Regístrate aquí</span>
+    <p style="font-size:14px;color:rgba(255,255,255,0.88);text-align:center;margin-top:20px;">
+      ¿No tienes cuenta? <span style="color:var(--gold);font-weight:700;cursor:pointer;" onclick="showScreen('register')">Regístrate aquí</span>
     </p>
   </div>
 </div>
@@ -203,7 +226,7 @@
   <div style="margin-top:32px;">
     <button class="btn-primary" onclick="registerUser()">Crear cuenta</button>
   </div>
-  <p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:20px;line-height:1.7;padding:0 20px;">
+  <p style="font-size:12.5px;color:rgba(255,255,255,0.85);text-align:center;margin-top:20px;line-height:1.65;padding:0 20px;">
     Al registrarte aceptas recibir comunicaciones de Casa Le Bistró sobre tus puntos y promociones.
   </p>
 </div>
@@ -242,7 +265,7 @@
 
   <div class="tab-content active" id="tab-rewards">
     <h3 class="section-title">Tus beneficios</h3>
-    <p class="section-sub">Cada $2.500 — 1 punto.<br><span style="color:var(--gold);font-weight:500;font-size:13px;letter-spacing:0.04em;">Canjea y redime de domingo a jueves.</span></p>
+    <p class="section-sub">Cada $2.500 — 1 punto.<br><span style="color:var(--gold);font-weight:700;font-size:14.5px;">Canjea y redime de domingo a jueves.</span></p>
     <div class="reward-card" id="reward-15" onclick="openRewardModal(15,'Clase de Yoga Virtual','🧘','Una clase de Yoga Virtual completamente gratis para ti. El mejor regalo para tu bienestar.')">
       <div class="reward-icon">🧘</div><div class="reward-info"><div class="reward-name">Clase de Yoga Virtual</div><div class="reward-desc">Gratis · Para tu bienestar</div></div>
       <div class="reward-pts"><div class="reward-pts-num">15</div><div class="reward-pts-label">puntos</div></div>
@@ -506,7 +529,7 @@ function updateHomeUI() {
         <div class="history-pts ${h.pts <= 0 ? 'negative' : ''}">${h.pts > 0 ? '+' + h.pts : h.pts}</div>
       </div>`).join('');
   } else {
-    histList.innerHTML = '<p style="color:var(--text-muted);font-size:13px;margin-top:12px;">Aún no hay actividad.</p>';
+    histList.innerHTML = '<p style="color:var(--text-muted);font-size:14.5px;margin-top:12px;">Aún no hay actividad.</p>';
   }
 }
 
