@@ -38,7 +38,7 @@
   .cream-wordmark img{width:100%;height:auto;}
   .welcome-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
   .divider{width:36px;height:1px;background:var(--gold);margin:0 auto 20px;opacity:0.5;}
-  .welcome-desc{font-size:15.5px;line-height:1.75;color:rgba(255,255,255,0.94);max-width:290px;margin:0 auto 18px;}
+  .welcome-desc{font-size:15.5px;line-height:1.75;color:rgba(255,255,255,0.94);max-width:290px;margin:0 auto 36px;}
   .condition-banner{display:flex;align-items:flex-start;gap:10px;background:rgba(200,169,110,0.09);border:1px solid rgba(200,169,110,0.25);padding:12px 16px;margin-bottom:30px;max-width:300px;text-align:left;}
   .condition-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
   .condition-text{font-size:13px;line-height:1.6;color:rgba(255,255,255,0.94);}
@@ -93,7 +93,7 @@
 
   .reward-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.14);padding:18px;margin-bottom:10px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
   .reward-card:hover{border-color:rgba(200,169,110,0.3);background:rgba(200,169,110,0.04);}
-  .reward-card.locked{opacity:0.78;}
+  .reward-card.locked{opacity:0.66;}
   .reward-card.unlocked::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);}
   .reward-icon{font-size:26px;flex-shrink:0;}
   .reward-info{flex:1;}
@@ -171,10 +171,6 @@
   <p class="welcome-eyebrow">Club de Lealtad</p>
   <div class="divider"></div>
   <p class="welcome-desc">Cada visita suma. Acumula puntos con cada compra y canjéalos por tus favoritos del menú.</p>
-  <div class="condition-banner">
-    <span class="condition-icon">📅</span>
-    <span class="condition-text">Redimir y acumular puntos válido únicamente de domingo a jueves.</span>
-  </div>
   <button class="btn-primary" onclick="showScreen('register')">Unirme al club</button>
   <button class="btn-ghost" onclick="showScreen('login')">Ya tengo cuenta</button>
 </div>
@@ -244,7 +240,7 @@
     <div class="points-card">
       <p class="points-label">Puntos acumulados</p>
       <div class="points-number" id="display-points">0</div>
-      <p class="points-equiv">Cada $2.500 — 1 punto. Canjea y redime de domingo a jueves.</p>
+      <p class="points-equiv">Cada $2.500 — 1 punto.</p>
       <div class="progress-section">
         <div class="progress-label">
           <span>Próximo canje</span>
@@ -265,23 +261,23 @@
 
   <div class="tab-content active" id="tab-rewards">
     <h3 class="section-title">Tus beneficios</h3>
-    <p class="section-sub">Cada $2.500 — 1 punto.<br><span style="color:var(--gold);font-weight:700;font-size:14.5px;">Canjea y redime de domingo a jueves.</span></p>
+    <p class="section-sub">Cada $2.500 — 1 punto.</p>
     <div class="reward-card" id="reward-15" onclick="openRewardModal(15,'Clase de Yoga Virtual','🧘','Una clase de Yoga Virtual completamente gratis para ti. El mejor regalo para tu bienestar.')">
       <div class="reward-icon">🧘</div><div class="reward-info"><div class="reward-name">Clase de Yoga Virtual</div><div class="reward-desc">Gratis · Para tu bienestar</div></div>
       <div class="reward-pts"><div class="reward-pts-num">15</div><div class="reward-pts-label">puntos</div></div>
     </div>
 
     <div class="reward-card" id="reward-40" onclick="openRewardModal(40,'Pin a tu Elección','📌','Elige el pin accesorio que más te guste. Un detalle especial por ser parte del club.')">
-      <div class="reward-icon">📌</div><div class="reward-info"><div class="reward-name">Pin — Accesorio</div><div class="reward-desc">A tu elección</div></div>
+      <div class="reward-icon">📌</div><div class="reward-info"><div class="reward-name">Pin — Accesorio</div><div class="reward-desc">Conoce nuestros divertidos pines y elige el que más te guste</div></div>
       <div class="reward-pts"><div class="reward-pts-num">40</div><div class="reward-pts-label">puntos</div></div>
     </div>
 
     <div class="reward-card" id="reward-50a" onclick="openRewardModal(50,'Tinto de Verano o Cerveza Nacional','🍷','Un tinto de verano o una cerveza nacional gratis.')">
-      <div class="reward-icon">🍷</div><div class="reward-info"><div class="reward-name">Tinto de Verano o Cerveza</div><div class="reward-desc">Nacional · A tu elección</div></div>
+      <div class="reward-icon">🍷</div><div class="reward-info"><div class="reward-name">Tinto de Verano o Cerveza Nacional</div><div class="reward-desc">A tu elección</div></div>
       <div class="reward-pts"><div class="reward-pts-num">50</div><div class="reward-pts-label">puntos</div></div>
     </div>
-    <div class="reward-card" id="reward-60a" onclick="openRewardModal(60,'Hamburguesa Ilustre con Papas','🍔','Ven el martes y te damos una Hamburguesa Ilustre con papas completamente gratis.')">
-      <div class="reward-icon">🍔</div><div class="reward-info"><div class="reward-name">Hamburguesa Ilustre con Papas</div><div class="reward-desc">Redime de domingo a jueves</div></div>
+    <div class="reward-card" id="reward-60a" onclick="openRewardModal(60,'Hamburguesa Ilustre con Papas','🍔','Te damos una Hamburguesa Ilustre con papas completamente gratis.')">
+      <div class="reward-icon">🍔</div><div class="reward-info"><div class="reward-name">Hamburguesa Ilustre con Papas</div></div>
       <div class="reward-pts"><div class="reward-pts-num">60</div><div class="reward-pts-label">puntos</div></div>
     </div>
     <div class="reward-card" id="reward-60b" onclick="openRewardModal(60,'Postre a Elegir','🍮','Elige el postre que más te guste de nuestro menú.')">
@@ -293,21 +289,31 @@
       <div class="reward-pts"><div class="reward-pts-num">80</div><div class="reward-pts-label">puntos</div></div>
     </div>
     <div class="reward-card" id="reward-100" onclick="openRewardModal(100,'Hamburguesa Clásica con Papas','🍟','Una hamburguesa clásica con papas incluidas. Un clásico que nunca falla.')">
-      <div class="reward-icon">🍟</div><div class="reward-info"><div class="reward-name">Hamburguesa Clásica con Papas</div><div class="reward-desc">Incluye papas · Redime de domingo a jueves</div></div>
+      <div class="reward-icon">🍟</div><div class="reward-info"><div class="reward-name">Hamburguesa Clásica con Papas</div><div class="reward-desc">Incluye papas</div></div>
       <div class="reward-pts"><div class="reward-pts-num">100</div><div class="reward-pts-label">puntos</div></div>
     </div>
 
-    <div class="reward-card" id="reward-120" onclick="openRewardModal(120,'Hamburguesa de la Casa con Papas','🏠','Ven el martes y te obsequiamos nuestra Hamburguesa de la Casa con papas, la insignia del menú.')">
-      <div class="reward-icon">🏠</div><div class="reward-info"><div class="reward-name">Hamburguesa de la Casa con Papas</div><div class="reward-desc">Redime de domingo a jueves</div></div>
+    <div class="reward-card" id="reward-120" onclick="openRewardModal(120,'Hamburguesa de la Casa con Papas','🏠','Te obsequiamos nuestra Hamburguesa de la Casa con papas, la insignia del menú.')">
+      <div class="reward-icon">🏠</div><div class="reward-info"><div class="reward-name">Hamburguesa de la Casa con Papas</div></div>
       <div class="reward-pts"><div class="reward-pts-num">120</div><div class="reward-pts-label">puntos</div></div>
     </div>
-    <div class="reward-card" id="reward-300" onclick="openRewardModal(300,'Cena para Dos','🥂','Tus dos burgers favoritas + 2 bebidas. Una noche especial por cuenta de la casa.')">
-      <div class="reward-icon">🥂</div><div class="reward-info"><div class="reward-name">Cena para Dos</div><div class="reward-desc">2 burgers + 2 bebidas · A tu elección</div></div>
+
+    <div class="reward-card" id="reward-200" onclick="openRewardModal(200,'Grand Double Angus con Papas','🥩','Una Grand Double Angus con papas. Por cuenta de la casa.')">
+      <div class="reward-icon">🥩</div><div class="reward-info"><div class="reward-name">Grand Double Angus con Papas</div><div class="reward-desc">Con papas incluidas</div></div>
+      <div class="reward-pts"><div class="reward-pts-num">200</div><div class="reward-pts-label">puntos</div></div>
+    </div>
+    <div class="reward-card" id="reward-300" onclick="openRewardModal(300,'Cena para Dos','🥂','2 burgers (De la Casa y Cheese n\' Bacon) + 2 sodas a tu elección + un brownie con helado. Una noche especial por cuenta de la casa.')">
+      <div class="reward-icon">🥂</div><div class="reward-info"><div class="reward-name">Cena para Dos</div><div class="reward-desc">2 burgers (De la Casa y Cheese n' Bacon) + 2 sodas a tu elección + un brownie con helado</div></div>
       <div class="reward-pts"><div class="reward-pts-num">300</div><div class="reward-pts-label">puntos</div></div>
     </div>
-    <div class="reward-card" id="reward-400" onclick="openRewardModal(400,'4 Cheese n\' Bacon con Papas','🧀','Ven el martes y te obsequiamos 4 Cheese n\' Bacon con papas.')">
-      <div class="reward-icon">🧀</div><div class="reward-info"><div class="reward-name">4 Cheese n' Bacon con Papas</div><div class="reward-desc">Válido los martes · Con papas incluidas</div></div>
+    <div class="reward-card" id="reward-400" onclick="openRewardModal(400,'4 Cheese n\' Bacon con Papas','🧀','Te obsequiamos 4 Cheese n\' Bacon con papas.')">
+      <div class="reward-icon">🧀</div><div class="reward-info"><div class="reward-name">4 Cheese n' Bacon con Papas</div><div class="reward-desc">Con papas incluidas</div></div>
       <div class="reward-pts"><div class="reward-pts-num">400</div><div class="reward-pts-label">puntos</div></div>
+    </div>
+
+    <div class="reward-card" id="reward-600" onclick="openRewardModal(600,'Sabores del Mundo','🌍','4 hamburguesas especiales (De la Casa, Madame Malbec, Queen Master y Regal Gouda) + 4 cervezas importadas (Peroni - Italia, Modelo - México, Cusqueña - Perú y Asahi - Japón).')">
+      <div class="reward-icon">🌍</div><div class="reward-info"><div class="reward-name">Sabores del Mundo</div><div class="reward-desc">4 hamburguesas especiales (De la Casa, Madame Malbec, Queen Master y Regal Gouda) + 4 cervezas importadas (Peroni - Italia, Modelo - México, Cusqueña - Perú y Asahi - Japón)</div></div>
+      <div class="reward-pts"><div class="reward-pts-num">600</div><div class="reward-pts-label">puntos</div></div>
     </div>
   </div>
 
@@ -501,12 +507,14 @@ function updateHomeUI() {
   document.getElementById('home-username').textContent = currentUser.nombre.split(' ')[0];
   document.getElementById('display-points').textContent = currentUser.puntos;
   const rewardMap = [
-    {pts:50,name:'Tinto de Verano o Cerveza'},
+    {pts:50,name:'Tinto de Verano o Cerveza Nacional'},
     {pts:60,name:'Hamburguesa Ilustre o Postre'},
     {pts:80,name:'Cerveza Importada'},
     {pts:120,name:'Hamburguesa de la Casa'},
+    {pts:200,name:'Grand Double Angus'},
     {pts:300,name:'Cena para Dos'},
     {pts:400,name:'4 Cheese n Bacon'},
+    {pts:600,name:'Sabores del Mundo'},
   ];
   const next = rewardMap.find(r => r.pts > currentUser.puntos);
   const prevPts = rewardMap.filter(r => r.pts <= currentUser.puntos).pop()?.pts || 0;
@@ -535,7 +543,7 @@ function updateHomeUI() {
 
 function updateRewardCards(pts) {
   [{id:'reward-15',t:15},{id:'reward-40',t:40},{id:'reward-50a',t:50},{id:'reward-60a',t:60},{id:'reward-60b',t:60},
-   {id:'reward-80',t:80},{id:'reward-100',t:100},{id:'reward-120',t:120},{id:'reward-300',t:300},{id:'reward-400',t:400}]
+   {id:'reward-80',t:80},{id:'reward-100',t:100},{id:'reward-120',t:120},{id:'reward-200',t:200},{id:'reward-300',t:300},{id:'reward-400',t:400},{id:'reward-600',t:600}]
   .forEach(item => {
     const card = document.getElementById(item.id);
     const badge = card.querySelector('.unlock-badge');
